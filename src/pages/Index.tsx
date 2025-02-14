@@ -1,7 +1,6 @@
-
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
-import { Linkedin, Twitter, Send, Baseline } from "lucide-react";
+import { Linkedin, Twitter, Send, MapPin } from "lucide-react";
 
 const projects = [
   {
@@ -52,9 +51,20 @@ const Index = () => {
       <div className="container py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center">
+          <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full border-4 border-[#0EA5E9]/20 p-1">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+              alt="Profile"
+              className="h-full w-full rounded-full object-cover"
+            />
+          </div>
           <h1 className="animate-fade-up gradient-text text-4xl font-bold tracking-tight sm:text-6xl">
             My Startups
           </h1>
+          <div className="animate-fade-up mt-3 flex items-center justify-center gap-1 text-gray-400">
+            <MapPin className="h-4 w-4 text-[#0EA5E9]" />
+            <span>San Francisco, CA</span>
+          </div>
           <div className="animate-fade-up mt-6 flex justify-center gap-4">
             {socialLinks.map((social) => (
               <a

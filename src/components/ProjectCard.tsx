@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card } from "@/components/ui/card";
 import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2 } from "lucide-react";
@@ -13,6 +12,7 @@ interface ProjectCardProps {
   techStack: string[];
   type: 'web' | 'mobile';
   acquired?: boolean;
+  exited?: boolean;
 }
 
 export const ProjectCard = ({ 
@@ -24,7 +24,8 @@ export const ProjectCard = ({
   industry,
   techStack,
   type,
-  acquired
+  acquired,
+  exited
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,11 +37,19 @@ export const ProjectCard = ({
       onClick={() => window.open(url, '_blank')}
     >
       {acquired && (
+        <div className="absolute right-4 top-4 z-10">
+          <span className="inline-flex items-center rounded-full bg-emerald-400/10 px-3 py-1 text-sm font-medium text-emerald-400 ring-1 ring-inset ring-emerald-400/20">
+            <CheckCircle2 className="mr-1 h-3.5 w-3.5" />
+            Acquired
+          </span>
+        </div>
+      )}
+      {exited && (
         <div className="absolute -left-2 top-6 z-10">
           <div className="relative">
             <div className="absolute -left-2 -top-2 h-2 w-2 bg-emerald-900" />
             <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 px-4 py-1 text-sm font-semibold text-white shadow-lg">
-            💸  Acquired
+              Exited
             </div>
           </div>
         </div>
