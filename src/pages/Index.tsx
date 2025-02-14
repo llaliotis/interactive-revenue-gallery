@@ -43,7 +43,7 @@ const socialLinks = [
   { icon: <Linkedin className="h-6 w-6" />, url: "#", label: "LinkedIn" },
   { icon: <Twitter className="h-6 w-6" />, url: "#", label: "X (Twitter)" },
   { icon: <Send className="h-6 w-6" />, url: "#", label: "Telegram" },
-  { icon: <Baseline className="h-6 w-6" />, url: "#", label: "Warpcast" },
+  
 ];
 
 const Index = () => {
@@ -53,7 +53,7 @@ const Index = () => {
         {/* Hero Section */}
         <div className="mb-16 text-center">
           <h1 className="animate-fade-up gradient-text text-4xl font-bold tracking-tight sm:text-6xl">
-            My Digital Portfolio
+            My Startups
           </h1>
           <div className="animate-fade-up mt-6 flex justify-center gap-4">
             {socialLinks.map((social) => (
