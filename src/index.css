@@ -41,6 +41,7 @@
 
 .project-card {
   @apply relative overflow-hidden rounded-xl transition-all duration-300 hover:shadow-lg;
+  background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
 
 .project-card:hover img {
@@ -48,12 +49,14 @@
 }
 
 .revenue-card {
-  @apply relative overflow-hidden rounded-xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  @apply relative overflow-hidden rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  background: linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%);
 }
 
 .stat-value {
   @apply text-4xl font-bold tracking-tight;
-  background: linear-gradient(to right, #1a1a1a, #4a4a4a);
+  background: linear-gradient(to right, #8B5CF6, #D946EF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+

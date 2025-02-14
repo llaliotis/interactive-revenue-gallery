@@ -48,11 +48,11 @@ const socialLinks = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#FEF7CD] via-[#FFDEE2] to-[#E5DEFF]">
       <div className="container py-12">
         {/* Hero Section */}
         <div className="mb-16 text-center">
-          <h1 className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl">
+          <h1 className="animate-fade-up bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
             My Digital Portfolio
           </h1>
           <div className="animate-fade-up mt-6 flex justify-center gap-4">
@@ -62,21 +62,21 @@ const Index = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 transition-colors hover:text-gray-900"
+                className="text-[#8B5CF6] transition-colors hover:text-[#D946EF]"
                 aria-label={social.label}
               >
                 {social.icon}
               </a>
             ))}
           </div>
-          <p className="animate-fade-up mt-6 text-lg text-muted-foreground animation-delay-100">
+          <p className="animate-fade-up mt-6 text-lg text-gray-600 animation-delay-100">
             Showcasing innovative online businesses and digital tools
           </p>
         </div>
 
         {/* Revenue Stats */}
         <div className="mb-16 animate-fade-up animation-delay-200">
-          <h2 className="mb-8 text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
             Performance Overview
           </h2>
           <RevenueStats />
@@ -84,7 +84,7 @@ const Index = () => {
 
         {/* Projects Grid */}
         <div className="animate-fade-up animation-delay-300">
-          <h2 className="mb-8 text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
             Featured Projects
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
