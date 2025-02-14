@@ -30,7 +30,7 @@ export const ProjectCard = ({
 
   return (
     <Card 
-      className="project-card group cursor-pointer backdrop-blur-sm bg-white/50"
+      className="project-card group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.open(url, '_blank')}
@@ -41,34 +41,34 @@ export const ProjectCard = ({
           alt={title}
           className="h-full w-full object-cover transition-transform duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40 opacity-0 transition-opacity group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 opacity-0 transition-opacity group-hover:opacity-100" />
       </div>
       <div className="p-6">
         <div className="flex items-center justify-between">
-          <h3 className="bg-gradient-to-r from-[#8B5CF6] to-[#D946EF] bg-clip-text text-xl font-semibold text-transparent">{title}</h3>
+          <h3 className="gradient-text text-xl font-semibold">{title}</h3>
           <ArrowUpRight 
-            className={`h-5 w-5 text-[#8B5CF6] transition-transform duration-300 ${
+            className={`h-5 w-5 text-[#0EA5E9] transition-transform duration-300 ${
               isHovered ? 'translate-x-1 -translate-y-1' : ''
             }`}
           />
         </div>
-        <p className="mt-2 text-sm text-gray-600">{description}</p>
+        <p className="mt-2 text-sm text-gray-400">{description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {revenue && (
-            <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
+            <span className="rounded-full bg-emerald-950 px-3 py-1 text-sm font-medium text-emerald-400">
               Revenue: {revenue}
             </span>
           )}
-          <span className="rounded-full bg-[#E5DEFF] px-3 py-1 text-sm font-medium text-[#8B5CF6]">
+          <span className="rounded-full bg-sky-950 px-3 py-1 text-sm font-medium text-sky-400">
             <Globe className="mr-1 inline-block h-4 w-4" />
             {industry}
           </span>
-          <span className="rounded-full bg-[#FDE1D3] px-3 py-1 text-sm font-medium text-[#F97316]">
+          <span className="rounded-full bg-orange-950 px-3 py-1 text-sm font-medium text-orange-400">
             {type === 'web' ? <Database className="mr-1 inline-block h-4 w-4" /> : <Smartphone className="mr-1 inline-block h-4 w-4" />}
             {type === 'web' ? 'Web App' : 'Mobile App'}
           </span>
           {acquired && (
-            <span className="rounded-full bg-[#F2FCE2] px-3 py-1 text-sm font-medium text-emerald-600">
+            <span className="rounded-full bg-emerald-950 px-3 py-1 text-sm font-medium text-emerald-400">
               <CheckCircle2 className="mr-1 inline-block h-4 w-4" />
               Acquired
             </span>
@@ -76,7 +76,7 @@ export const ProjectCard = ({
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {techStack.map((tech) => (
-            <span key={tech} className="rounded-full bg-[#FFDEE2] px-3 py-1 text-sm font-medium text-[#D946EF]">
+            <span key={tech} className="rounded-full bg-purple-950 px-3 py-1 text-sm font-medium text-purple-400">
               {tech}
             </span>
           ))}
