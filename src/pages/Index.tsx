@@ -12,8 +12,7 @@ const projects = [
     industry: "Analytics",
     techStack: ["React", "Node.js", "AWS"],
     type: "web" as const,
-    acquired: true,
-    exited: true
+    acquired: true
   },
   {
     title: "Digital Tools Hub",
@@ -40,9 +39,9 @@ const projects = [
 ];
 
 const socialLinks = [
-  { icon: <Linkedin className="h-6 w-6" />, url: "#", label: "LinkedIn" },
-  { icon: <Twitter className="h-6 w-6" />, url: "#", label: "X (Twitter)" },
-  { icon: <Send className="h-6 w-6" />, url: "#", label: "Telegram" },
+  { icon: <Linkedin className="h-6 w-6" />, url: "https://www.linkedin.com/in/eleftherios-laliotis/", label: "LinkedIn" },
+  { icon: <Twitter className="h-6 w-6" />, url: "https://x.com/greekdubliner", label: "X (Twitter)" },
+  { icon: <Send className="h-6 w-6" />, url: "https://t.me/LaliotisJR", label: "Telegram" },
 ];
 
 const Index = () => {
@@ -52,17 +51,17 @@ const Index = () => {
         <div className="mb-16 text-center">
           <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full border-4 border-[#0EA5E9]/20 p-1">
             <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+              src="/prof.jpg"
               alt="Profile"
               className="h-full w-full rounded-full object-cover"
             />
           </div>
           <h1 className="animate-fade-up gradient-text text-4xl font-bold tracking-tight sm:text-6xl">
-            My Startups
+            Lefteris Laliotis
           </h1>
           <div className="animate-fade-up mt-3 flex items-center justify-center gap-1 text-gray-400">
             <MapPin className="h-4 w-4 text-[#0EA5E9]" />
-            <span>San Francisco, CA</span>
+            <span>Dublin, Ireland</span>
           </div>
           <div className="animate-fade-up mt-6 flex justify-center gap-4">
             {socialLinks.map((social) => (
@@ -79,7 +78,7 @@ const Index = () => {
             ))}
           </div>
           <p className="animate-fade-up mt-6 text-lg text-gray-400 animation-delay-100">
-            Showcasing innovative online businesses and digital tools
+            Building startups for my family and friends
           </p>
         </div>
 

@@ -14,7 +14,7 @@ interface ProjectCardProps {
   type: 'web' | 'mobile';
   acquired?: boolean;
   failed?: boolean;
-  exited?: boolean;
+  
 }
 
 export const ProjectCard = ({ 
@@ -27,8 +27,7 @@ export const ProjectCard = ({
   techStack,
   type,
   acquired,
-  failed,
-  exited
+  failed
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -55,16 +54,7 @@ export const ProjectCard = ({
           </span>
         </div>
       )}
-      {exited && (
-        <div className="absolute -left-2 top-6 z-10">
-          <div className="relative">
-            <div className="absolute -left-2 -top-2 h-2 w-2 bg-emerald-900" />
-            <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 px-4 py-1 text-sm font-semibold text-white shadow-lg">
-              Exited
-            </div>
-          </div>
-        </div>
-      )}
+      
       <div className="relative aspect-video overflow-hidden rounded-t-xl">
         <img
           src={image}
