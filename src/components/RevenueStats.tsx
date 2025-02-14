@@ -1,5 +1,5 @@
 
-import { DollarSign, TrendingUp, Users } from "lucide-react";
+import { DollarSign, TrendingUp, Users, Rocket } from "lucide-react";
 
 interface StatCardProps {
   title: string;
@@ -21,7 +21,7 @@ const StatCard = ({ title, value, icon }: StatCardProps) => (
 
 export const RevenueStats = () => {
   return (
-    <div className="grid gap-6 md:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-4">
       <StatCard
         title="Total Revenue"
         value="$128,400"
@@ -36,6 +36,11 @@ export const RevenueStats = () => {
         title="Growth"
         value="+23.4%"
         icon={<TrendingUp className="h-6 w-6" />}
+      />
+      <StatCard
+        title="Startups"
+        value="8"
+        icon={<Rocket className="h-6 w-6" />}
       />
     </div>
   );

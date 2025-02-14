@@ -1,6 +1,7 @@
 
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
+import { Linkedin, Twitter, Send, Baseline } from "lucide-react";
 
 const projects = [
   {
@@ -9,6 +10,10 @@ const projects = [
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     url: "#",
     revenue: "$50,000/mo",
+    industry: "Analytics",
+    techStack: ["React", "Node.js", "AWS"],
+    type: "web",
+    acquired: true
   },
   {
     title: "Digital Tools Hub",
@@ -16,6 +21,10 @@ const projects = [
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     url: "#",
     revenue: "$35,000/mo",
+    industry: "Productivity",
+    techStack: ["Vue.js", "Firebase", "Flutter"],
+    type: "mobile",
+    acquired: false
   },
   {
     title: "Tech Solutions",
@@ -23,7 +32,18 @@ const projects = [
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     url: "#",
     revenue: "$43,400/mo",
+    industry: "Enterprise",
+    techStack: ["Angular", "Java", "Azure"],
+    type: "web",
+    acquired: false
   },
+];
+
+const socialLinks = [
+  { icon: <Linkedin className="h-6 w-6" />, url: "#", label: "LinkedIn" },
+  { icon: <Twitter className="h-6 w-6" />, url: "#", label: "X (Twitter)" },
+  { icon: <Send className="h-6 w-6" />, url: "#", label: "Telegram" },
+  { icon: <Baseline className="h-6 w-6" />, url: "#", label: "Warpcast" },
 ];
 
 const Index = () => {
@@ -35,6 +55,20 @@ const Index = () => {
           <h1 className="animate-fade-up text-4xl font-bold tracking-tight sm:text-6xl">
             My Digital Portfolio
           </h1>
+          <div className="animate-fade-up mt-6 flex justify-center gap-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 transition-colors hover:text-gray-900"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
           <p className="animate-fade-up mt-6 text-lg text-muted-foreground animation-delay-100">
             Showcasing innovative online businesses and digital tools
           </p>

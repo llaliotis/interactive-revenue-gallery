@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Card } from "@/components/ui/card";
-import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2 } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -9,9 +9,23 @@ interface ProjectCardProps {
   image: string;
   url: string;
   revenue?: string;
+  industry: string;
+  techStack: string[];
+  type: 'web' | 'mobile';
+  acquired?: boolean;
 }
 
-export const ProjectCard = ({ title, description, image, url, revenue }: ProjectCardProps) => {
+export const ProjectCard = ({ 
+  title, 
+  description, 
+  image, 
+  url, 
+  revenue,
+  industry,
+  techStack,
+  type,
+  acquired 
+}: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -39,13 +53,34 @@ export const ProjectCard = ({ title, description, image, url, revenue }: Project
           />
         </div>
         <p className="mt-2 text-sm text-muted-foreground">{description}</p>
-        {revenue && (
-          <div className="mt-4 flex items-center gap-2 text-sm font-medium">
-            <span className="rounded-full bg-green-100 px-3 py-1 text-green-800">
+        <div className="mt-4 flex flex-wrap gap-2">
+          {revenue && (
+            <span className="rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
               Revenue: {revenue}
             </span>
-          </div>
-        )}
+          )}
+          <span className="flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+            <Globe className="h-4 w-4" />
+            {industry}
+          </span>
+          <span className="flex items-center gap-1 rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800">
+            {type === 'web' ? <Database className="h-4 w-4" /> : <Smartphone className="h-4 w-4" />}
+            {type === 'web' ? 'Web App' : 'Mobile App'}
+          </span>
+          {acquired && (
+            <span className="flex items-center gap-1 rounded-full bg-teal-100 px-3 py-1 text-sm font-medium text-teal-800">
+              <CheckCircle2 className="h-4 w-4" />
+              Acquired
+            </span>
+          )}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {techStack.map((tech) => (
+            <span key={tech} className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800">
+              {tech}
+            </span>
+          ))}
+        </div>
       </div>
     </Card>
   );
