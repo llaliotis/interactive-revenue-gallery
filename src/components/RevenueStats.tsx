@@ -21,7 +21,12 @@ const StatCard = ({ title, value, icon }: StatCardProps) => (
 
 export const RevenueStats = () => {
   return (
-    <div className="grid gap-6 md:grid-cols-4">
+    <div className="grid gap-6 md:grid-cols-3">
+      <StatCard
+        title="Startups"
+        value="8"
+        icon={<Rocket className="h-6 w-6" />}
+      />
       <StatCard
         title="Total Revenue"
         value="$128,400"
@@ -31,16 +36,6 @@ export const RevenueStats = () => {
         title="Active Users"
         value="12,234"
         icon={<Users className="h-6 w-6" />}
-      />
-      <StatCard
-        title="Growth"
-        value="+23.4%"
-        icon={<TrendingUp className="h-6 w-6" />}
-      />
-      <StatCard
-        title="Startups"
-        value="8"
-        icon={<Rocket className="h-6 w-6" />}
       />
     </div>
   );
