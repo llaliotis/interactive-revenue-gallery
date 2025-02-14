@@ -13,7 +13,8 @@ const projects = [
     industry: "Analytics",
     techStack: ["React", "Node.js", "AWS"],
     type: "web" as const,
-    acquired: true
+    acquired: true,
+    exited: true
   },
   {
     title: "Digital Tools Hub",

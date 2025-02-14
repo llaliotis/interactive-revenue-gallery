@@ -13,6 +13,7 @@ interface ProjectCardProps {
   techStack: string[];
   type: 'web' | 'mobile';
   acquired?: boolean;
+  exited?: boolean;
 }
 
 export const ProjectCard = ({ 
@@ -24,17 +25,28 @@ export const ProjectCard = ({
   industry,
   techStack,
   type,
-  acquired 
+  acquired,
+  exited
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Card 
-      className="project-card group cursor-pointer"
+      className="project-card group cursor-pointer relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => window.open(url, '_blank')}
     >
+      {exited && (
+        <div className="absolute -left-2 top-6 z-10">
+          <div className="relative">
+            <div className="absolute -left-2 -top-2 h-2 w-2 bg-emerald-900" />
+            <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 px-4 py-1 text-sm font-semibold text-white shadow-lg">
+              Exited
+            </div>
+          </div>
+        </div>
+      )}
       <div className="relative aspect-video overflow-hidden rounded-t-xl">
         <img
           src={image}
