@@ -12,7 +12,7 @@ const projects = [
     revenue: "$50,000/mo",
     industry: "Analytics",
     techStack: ["React", "Node.js", "AWS"],
-    type: "web",
+    type: "web" as const,
     acquired: true
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     revenue: "$35,000/mo",
     industry: "Productivity",
     techStack: ["Vue.js", "Firebase", "Flutter"],
-    type: "mobile",
+    type: "mobile" as const,
     acquired: false
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     revenue: "$43,400/mo",
     industry: "Enterprise",
     techStack: ["Angular", "Java", "Azure"],
-    type: "web",
+    type: "web" as const,
     acquired: false
   },
 ];
