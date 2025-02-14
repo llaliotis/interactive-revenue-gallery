@@ -1,6 +1,7 @@
+
 import { useState } from 'react';
 import { Card } from "@/components/ui/card";
-import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2, XCircle } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -12,6 +13,7 @@ interface ProjectCardProps {
   techStack: string[];
   type: 'web' | 'mobile';
   acquired?: boolean;
+  failed?: boolean;
   exited?: boolean;
 }
 
@@ -25,6 +27,7 @@ export const ProjectCard = ({
   techStack,
   type,
   acquired,
+  failed,
   exited
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -38,9 +41,17 @@ export const ProjectCard = ({
     >
       {acquired && (
         <div className="absolute right-4 top-4 z-10">
-          <span className="inline-flex items-center rounded-full bg-emerald-400/10 px-3 py-1 text-sm font-medium text-emerald-400 ring-1 ring-inset ring-emerald-400/20">
+          <span className="inline-flex items-center rounded-full bg-emerald-500 px-3 py-1 text-sm font-medium text-white">
             <CheckCircle2 className="mr-1 h-3.5 w-3.5" />
             Acquired
+          </span>
+        </div>
+      )}
+      {failed && (
+        <div className="absolute right-4 top-4 z-10">
+          <span className="inline-flex items-center rounded-full bg-red-500 px-3 py-1 text-sm font-medium text-white">
+            <XCircle className="mr-1 h-3.5 w-3.5" />
+            Failed
           </span>
         </div>
       )}
@@ -86,12 +97,6 @@ export const ProjectCard = ({
             {type === 'web' ? <Database className="mr-1 inline-block h-4 w-4" /> : <Smartphone className="mr-1 inline-block h-4 w-4" />}
             {type === 'web' ? 'Web App' : 'Mobile App'}
           </span>
-          {acquired && (
-            <span className="rounded-full bg-emerald-950 px-3 py-1 text-sm font-medium text-emerald-400">
-              <CheckCircle2 className="mr-1 inline-block h-4 w-4" />
-              Acquired
-            </span>
-          )}
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {techStack.map((tech) => (

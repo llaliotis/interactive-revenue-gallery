@@ -12,7 +12,8 @@ const projects = [
     industry: "Analytics",
     techStack: ["React", "Node.js", "AWS"],
     type: "web" as const,
-    acquired: true
+    acquired: true,
+    exited: true
   },
   {
     title: "Digital Tools Hub",
@@ -23,7 +24,7 @@ const projects = [
     industry: "Productivity",
     techStack: ["Vue.js", "Firebase", "Flutter"],
     type: "mobile" as const,
-    exited: true
+    failed: true
   },
   {
     title: "Tech Solutions",
@@ -42,14 +43,12 @@ const socialLinks = [
   { icon: <Linkedin className="h-6 w-6" />, url: "#", label: "LinkedIn" },
   { icon: <Twitter className="h-6 w-6" />, url: "#", label: "X (Twitter)" },
   { icon: <Send className="h-6 w-6" />, url: "#", label: "Telegram" },
-  
 ];
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A1F2C] via-[#221F26] to-[#1A1F2C]">
       <div className="container py-12">
-        {/* Hero Section */}
         <div className="mb-16 text-center">
           <div className="mx-auto mb-6 h-32 w-32 overflow-hidden rounded-full border-4 border-[#0EA5E9]/20 p-1">
             <img
@@ -84,7 +83,6 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Revenue Stats */}
         <div className="mb-16 animate-fade-up animation-delay-200">
           <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
             Performance Overview
@@ -92,7 +90,6 @@ const Index = () => {
           <RevenueStats />
         </div>
 
-        {/* Projects Grid */}
         <div className="animate-fade-up animation-delay-300">
           <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
             Showcase
