@@ -13,8 +13,7 @@ const projects = [
     industry: "Analytics",
     techStack: ["React", "Node.js", "AWS"],
     type: "web" as const,
-    acquired: true,
-    exited: true
+    acquired: true
   },
   {
     title: "Digital Tools Hub",
@@ -25,7 +24,7 @@ const projects = [
     industry: "Productivity",
     techStack: ["Vue.js", "Firebase", "Flutter"],
     type: "mobile" as const,
-    acquired: false
+    exited: true
   },
   {
     title: "Tech Solutions",
@@ -86,7 +85,7 @@ const Index = () => {
         {/* Projects Grid */}
         <div className="animate-fade-up animation-delay-300">
           <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
-            Featured Projects
+            Showcase
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
