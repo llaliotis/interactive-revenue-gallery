@@ -10,7 +10,7 @@ interface StatCardProps {
 const StatCard = ({ title, value, icon }: StatCardProps) => (
   <div className="revenue-card">
     <div className="flex items-center gap-4">
-      <div className="rounded-full bg-gray-100 p-3">{icon}</div>
+      <div className="rounded-full bg-gray-900/50 p-3 text-gray-400">{icon}</div>
       <div>
         <p className="text-sm text-muted-foreground">{title}</p>
         <p className="stat-value">{value}</p>
