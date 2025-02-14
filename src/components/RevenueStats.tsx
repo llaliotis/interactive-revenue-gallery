@@ -24,17 +24,17 @@ export const RevenueStats = () => {
     <div className="grid gap-6 md:grid-cols-3">
       <StatCard
         title="Startups"
-        value="8"
+        value="5"
         icon={<Rocket className="h-6 w-6" />}
       />
       <StatCard
         title="Total Revenue"
-        value="$128,400"
+        value="$28,400"
         icon={<DollarSign className="h-6 w-6" />}
       />
       <StatCard
         title="Active Users"
-        value="12,234"
+        value="2,234"
         icon={<Users className="h-6 w-6" />}
       />
     </div>
