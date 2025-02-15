@@ -4,6 +4,31 @@ import { Linkedin, Twitter, Send, MapPin } from "lucide-react";
 
 const projects = [
   {
+    title: "Project Alpha",
+    description: "A revolutionary SaaS platform for business analytics",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    url: "#",
+    revenue: "$50,000/mo",
+    industry: "Analytics",
+    techStack: ["React", "Node.js", "AWS"],
+    type: "web" as const,
+    acquired: true,
+    exited: true,
+    github: "https://github.com/yourusername/project-alpha"
+  },
+  {
+    title: "Digital Tools Hub",
+    description: "Collection of productivity tools for remote teams",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    url: "#",
+    revenue: "$35,000/mo",
+    industry: "Productivity",
+    techStack: ["Vue.js", "Firebase", "Flutter"],
+    type: "mobile" as const,
+    failed: true,
+    github: "https://github.com/yourusername/digital-tools-hub"
+  },
+  {
     title: "PortfolioGPT",
     description: "Generate smart portfolios in seconds with AI",
     image: "/portfoliogpt.png",

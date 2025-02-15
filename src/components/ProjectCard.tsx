@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Card } from "@/components/ui/card";
-import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowUpRight, Globe, Database, Smartphone, CheckCircle2, XCircle, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -14,7 +14,8 @@ interface ProjectCardProps {
   type: 'web' | 'mobile';
   acquired?: boolean;
   failed?: boolean;
-  
+  exited?: boolean;
+  github?: string;
 }
 
 export const ProjectCard = ({ 
@@ -27,9 +28,16 @@ export const ProjectCard = ({
   techStack,
   type,
   acquired,
-  failed
+  failed,
+  exited,
+  github
 }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleClick = (e: React.MouseEvent, link: string) => {
+    e.stopPropagation();
+    window.open(link, '_blank');
+  };
 
   return (
     <Card 
@@ -54,7 +62,16 @@ export const ProjectCard = ({
           </span>
         </div>
       )}
-      
+      {exited && (
+        <div className="absolute -left-2 top-6 z-10">
+          <div className="relative">
+            <div className="absolute -left-2 -top-2 h-2 w-2 bg-emerald-900" />
+            <div className="bg-gradient-to-r from-emerald-600 to-emerald-400 px-4 py-1 text-sm font-semibold text-white shadow-lg">
+              Exited
+            </div>
+          </div>
+        </div>
+      )}
       <div className="relative aspect-video overflow-hidden rounded-t-xl">
         <img
           src={image}
@@ -88,12 +105,23 @@ export const ProjectCard = ({
             {type === 'web' ? 'Web App' : 'Mobile App'}
           </span>
         </div>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {techStack.map((tech) => (
-            <span key={tech} className="rounded-full bg-purple-950 px-3 py-1 text-sm font-medium text-purple-400">
-              {tech}
-            </span>
-          ))}
+        <div className="mt-3 flex flex-wrap items-center justify-between">
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span key={tech} className="rounded-full bg-purple-950 px-3 py-1 text-sm font-medium text-purple-400">
+                {tech}
+              </span>
+            ))}
+          </div>
+          {github && (
+            <button 
+              onClick={(e) => handleClick(e, github)}
+              className="ml-2 rounded-full bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors"
+              aria-label="View GitHub Repository"
+            >
+              <Github className="h-4 w-4" />
+            </button>
+          )}
         </div>
       </div>
     </Card>
