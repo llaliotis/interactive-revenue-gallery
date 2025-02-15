@@ -3,31 +3,31 @@ import { RevenueStats } from "@/components/RevenueStats";
 import { Linkedin, Twitter, Send, MapPin } from "lucide-react";
 
 const projects = [
-  {
-    title: "Project Alpha",
-    description: "A revolutionary SaaS platform for business analytics",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    url: "#",
-    revenue: "$50,000/mo",
-    industry: "Analytics",
-    techStack: ["React", "Node.js", "AWS"],
-    type: "web" as const,
-    acquired: true,
-    exited: true,
-    github: "https://github.com/yourusername/project-alpha"
-  },
-  {
-    title: "Digital Tools Hub",
-    description: "Collection of productivity tools for remote teams",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    url: "#",
-    revenue: "$35,000/mo",
-    industry: "Productivity",
-    techStack: ["Vue.js", "Firebase", "Flutter"],
-    type: "mobile" as const,
-    failed: true,
-    github: "https://github.com/yourusername/digital-tools-hub"
-  },
+  // {
+  //   title: "Project Alpha",
+  //   description: "A revolutionary SaaS platform for business analytics",
+  //   image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  //   url: "#",
+  //   revenue: "$50,000/mo",
+  //   industry: "Analytics",
+  //   techStack: ["React", "Node.js", "AWS"],
+  //   type: "web" as const,
+  //   acquired: true,
+  //   exited: true,
+  //   github: "https://github.com/yourusername/project-alpha"
+  // },
+  // {
+  //   title: "Digital Tools Hub",
+  //   description: "Collection of productivity tools for remote teams",
+  //   image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+  //   url: "#",
+  //   revenue: "$35,000/mo",
+  //   industry: "Productivity",
+  //   techStack: ["Vue.js", "Firebase", "Flutter"],
+  //   type: "mobile" as const,
+  //   failed: true,
+  //   github: "https://github.com/yourusername/digital-tools-hub"
+  // },
   {
     title: "PortfolioGPT",
     description: "Generate smart portfolios in seconds with AI",
@@ -37,7 +37,8 @@ const projects = [
     industry: "AI",
     techStack: ["Python", "Next.js", "MongoDB", "Vercel", "Heroku", "OpenAI API"],
     type: "web" as const,
-    acquired: true
+    acquired: true,
+    
   },
   {
     title: "TipsterGPT",
@@ -71,6 +72,7 @@ const projects = [
     techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
     type: "web" as const,
     acquired: false
+    // github: "https://github.com/yourusername/project-alpha"
   },
   {
     title: "Candidate Matchmaker",
@@ -81,7 +83,8 @@ const projects = [
     industry: "HR",
     techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
     type: "web" as const,
-    acquired: false
+    acquired: false,
+    github: "https://github.com/llaliotis/candidate-matchmaker"
   },
 ];
 
