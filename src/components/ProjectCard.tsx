@@ -105,8 +105,8 @@ export const ProjectCard = ({
             {type === 'web' ? 'Web App' : 'Mobile App'}
           </span>
         </div>
-        <div className="mt-3 flex flex-wrap items-center justify-between">
-          <div className="flex flex-wrap gap-2">
+        <div className="mt-3">
+          <div className="flex flex-wrap gap-2 mb-8">
             {techStack.map((tech) => (
               <span key={tech} className="rounded-full bg-purple-950 px-3 py-1 text-sm font-medium text-purple-400">
                 {tech}
@@ -114,13 +114,15 @@ export const ProjectCard = ({
             ))}
           </div>
           {github && (
-            <button 
-              onClick={(e) => handleClick(e, github)}
-              className="ml-2 rounded-full bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors"
-              aria-label="View GitHub Repository"
-            >
-              <Github className="h-4 w-4" />
-            </button>
+            <div className="absolute bottom-4 right-4">
+              <button 
+                onClick={(e) => handleClick(e, github)}
+                className="rounded-full bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white transition-colors"
+                aria-label="View GitHub Repository"
+              >
+                <Github className="h-4 w-4" />
+              </button>
+            </div>
           )}
         </div>
       </div>
