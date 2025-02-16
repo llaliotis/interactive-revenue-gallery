@@ -95,6 +95,29 @@ const socialLinks = [
   { icon: <Send className="h-6 w-6" />, url: "https://t.me/LaliotisJR", label: "Telegram" },
 ];
 
+const favoriteTools = [
+  {
+    name: "Vercel",
+    url: "https://vercel.com",
+    icon: "/vercel.svg",
+  },
+  {
+    name: "Supabase",
+    url: "https://supabase.com",
+    icon: "/supabase.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    url: "https://tailwindcss.com",
+    icon: "/tailwind.svg",
+  },
+  {
+    name: "OpenAI",
+    url: "https://openai.com",
+    icon: "/openai.svg",
+  },
+];
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1A1F2C] via-[#221F26] to-[#1A1F2C]">
@@ -138,6 +161,32 @@ const Index = () => {
             Performance Overview
           </h2>
           <RevenueStats />
+        </div>
+
+        <div className="mb-16 animate-fade-up animation-delay-250">
+          <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
+            Favorite Tools
+          </h2>
+          <div className="flex flex-wrap gap-6 justify-center">
+            {favoriteTools.map((tool) => (
+              <a
+                key={tool.name}
+                href={tool.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
+              >
+                <img
+                  src={tool.icon}
+                  alt={tool.name}
+                  className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all"
+                />
+                <span className="text-gray-400 group-hover:text-gray-200 transition-colors">
+                  {tool.name}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="animate-fade-up animation-delay-300">
