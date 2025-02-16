@@ -98,24 +98,39 @@ const socialLinks = [
 
 const favoriteTools = [
   {
+    name: "Cursor",
+    url: "https://www.cursor.com/",
+    icon: "https://www.cursor.com/apple-touch-icon.png",
+  },
+  {
+    name: "Lovable",
+    url: "https://lovable.dev/",
+    icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
+  },
+  {
     name: "Vercel",
     url: "https://vercel.com",
-    icon: "/vercel.svg",
+    icon: "https://pipedream.com/s.v0/app_XaLh2x/logo/orig",
   },
   {
-    name: "Supabase",
-    url: "https://supabase.com",
-    icon: "/supabase.svg",
+    name: "Claude",
+    url: "https://claude.ai/",
+    icon: "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png",
   },
   {
-    name: "Tailwind CSS",
-    url: "https://tailwindcss.com",
-    icon: "/tailwind.svg",
+    name: "code2prompt",
+    url: "https://github.com/mufeedvh/code2prompt",
+    icon: "https://github.com/mufeedvh/code2prompt/raw/main/.assets/code2prompt-screenshot.png",
   },
   {
-    name: "OpenAI",
+    name: "ChatGPT",
     url: "https://openai.com",
-    icon: "/openai.svg",
+    icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
+  },
+  {
+    name: "Shipfast",
+    url: "https://shipfa.st/?via=sleepwow",
+    icon: "https://shipfa.st/logo_transparent.png",
   },
 ];
 
