@@ -71,8 +71,8 @@ const projects = [
     industry: "Productivity",
     techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
     type: "web" as const,
-    acquired: false
-    // github: "https://github.com/yourusername/project-alpha"
+    acquired: false,
+    github: "https://github.com/llaliotis/interactive-revenue-gallery"
   },
   {
     title: "Candidate Matchmaker",
