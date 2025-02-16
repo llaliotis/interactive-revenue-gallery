@@ -1,6 +1,6 @@
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
-import { Linkedin, Twitter, Send, MapPin } from "lucide-react";
+import { Linkedin, Twitter, Github, Send, MapPin } from "lucide-react";
 
 const projects = [
   // {
@@ -89,6 +89,7 @@ const projects = [
 ];
 
 const socialLinks = [
+  { icon: <Github className="h-6 w-6" />, url: "https://github.com/llaliotis", label: "Github" },
   { icon: <Linkedin className="h-6 w-6" />, url: "https://www.linkedin.com/in/eleftherios-laliotis/", label: "LinkedIn" },
   { icon: <Twitter className="h-6 w-6" />, url: "https://x.com/greekdubliner", label: "X (Twitter)" },
   { icon: <Send className="h-6 w-6" />, url: "https://t.me/LaliotisJR", label: "Telegram" },
