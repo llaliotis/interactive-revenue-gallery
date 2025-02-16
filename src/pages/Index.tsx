@@ -1,3 +1,4 @@
+
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
 import { Linkedin, Twitter, Github, Send, MapPin } from "lucide-react";
@@ -157,14 +158,14 @@ const Index = () => {
         </div>
 
         <div className="mb-16 animate-fade-up animation-delay-200">
-          <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 text-center gradient-text text-3xl font-bold tracking-tight">
             Performance Overview
           </h2>
           <RevenueStats />
         </div>
 
         <div className="mb-16 animate-fade-up animation-delay-250">
-          <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 text-center gradient-text text-3xl font-bold tracking-tight">
             Favorite Tools
           </h2>
           <div className="flex flex-wrap gap-6 justify-center">
@@ -190,7 +191,7 @@ const Index = () => {
         </div>
 
         <div className="animate-fade-up animation-delay-300">
-          <h2 className="mb-8 gradient-text text-2xl font-semibold tracking-tight">
+          <h2 className="mb-8 text-center gradient-text text-3xl font-bold tracking-tight">
             Showcase
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
