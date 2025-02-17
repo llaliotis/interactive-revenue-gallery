@@ -101,36 +101,43 @@ const favoriteTools = [
     name: "Cursor",
     url: "https://www.cursor.com/",
     icon: "https://www.cursor.com/apple-touch-icon.png",
+    price: "$20/month"
   },
   {
     name: "Lovable",
     url: "https://lovable.dev/",
     icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
+    price: "$50/month"
   },
   {
     name: "Vercel",
     url: "https://vercel.com",
     icon: "https://pipedream.com/s.v0/app_XaLh2x/logo/orig",
+    price: "Free"
   },
   {
     name: "Claude",
     url: "https://claude.ai/",
     icon: "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png",
+    price: "$20/month"
   },
   {
     name: "code2prompt",
     url: "https://github.com/mufeedvh/code2prompt",
     icon: "https://github.com/mufeedvh/code2prompt/raw/main/.assets/code2prompt-screenshot.png",
+    price: "Free"
   },
   {
     name: "ChatGPT",
     url: "https://openai.com",
     icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
+    price: "$20/month"
   },
   {
     name: "Shipfast",
     url: "https://shipfa.st/?via=sleepwow",
     icon: "https://shipfa.st/logo_transparent.png",
+    price: "Free"
   },
 ];
 
@@ -185,22 +192,26 @@ const Index = () => {
           </h2>
           <div className="flex flex-wrap gap-6 justify-center">
             {favoriteTools.map((tool) => (
-              <a
-                key={tool.name}
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
-              >
-                <img
-                  src={tool.icon}
-                  alt={tool.name}
-                  className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all"
-                />
-                <span className="text-gray-400 group-hover:text-gray-200 transition-colors">
-                  {tool.name}
+              <div key={tool.name} className="flex flex-col items-center">
+                <a
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
+                >
+                  <img
+                    src={tool.icon}
+                    alt={tool.name}
+                    className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all"
+                  />
+                  <span className="text-gray-400 group-hover:text-gray-200 transition-colors">
+                    {tool.name}
+                  </span>
+                </a>
+                <span className="mt-1.5 text-xs font-light text-gray-500">
+                  {tool.price}
                 </span>
-              </a>
+              </div>
             ))}
           </div>
         </div>
