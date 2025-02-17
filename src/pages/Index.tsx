@@ -1,3 +1,4 @@
+
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
 import { Linkedin, Twitter, Github, Send, MapPin } from "lucide-react";
@@ -184,11 +185,17 @@ const Index = () => {
             Favorite Tools
           </h2>
           <Tabs defaultValue="paid" className="w-full">
-            <TabsList className="grid w-[400px] max-w-[90vw] grid-cols-2 mx-auto mb-8">
-              <TabsTrigger value="paid" className="text-lg">
+            <TabsList className="grid w-[400px] max-w-[90vw] grid-cols-2 mx-auto mb-8 bg-[#1A1F2C]/80 backdrop-blur-lg border border-[#0EA5E9]/10 rounded-2xl p-1.5">
+              <TabsTrigger 
+                value="paid" 
+                className="text-base sm:text-lg py-2.5 rounded-xl ring-offset-background transition-all data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#0EA5E9]/20 data-[state=active]:to-[#22C55E]/20 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
                 Paid
               </TabsTrigger>
-              <TabsTrigger value="free" className="text-lg">
+              <TabsTrigger 
+                value="free" 
+                className="text-base sm:text-lg py-2.5 rounded-xl ring-offset-background transition-all data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#0EA5E9]/20 data-[state=active]:to-[#22C55E]/20 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
                 Free
               </TabsTrigger>
             </TabsList>
