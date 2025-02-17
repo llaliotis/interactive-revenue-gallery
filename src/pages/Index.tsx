@@ -107,7 +107,7 @@ const favoriteTools = [
     name: "Lovable",
     url: "https://lovable.dev/",
     icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
-    price: "$50/month"
+    price: "$20/month"
   },
   {
     name: "Vercel",
@@ -137,7 +137,7 @@ const favoriteTools = [
     name: "Shipfast",
     url: "https://shipfa.st/?via=sleepwow",
     icon: "https://shipfa.st/logo_transparent.png",
-    price: "Free"
+    price: "$249"
   },
 ];
 
