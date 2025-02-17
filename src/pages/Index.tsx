@@ -1,34 +1,9 @@
-
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
 import { Linkedin, Twitter, Github, Send, MapPin } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const projects = [
-  // {
-  //   title: "Project Alpha",
-  //   description: "A revolutionary SaaS platform for business analytics",
-  //   image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-  //   url: "#",
-  //   revenue: "$50,000/mo",
-  //   industry: "Analytics",
-  //   techStack: ["React", "Node.js", "AWS"],
-  //   type: "web" as const,
-  //   acquired: true,
-  //   exited: true,
-  //   github: "https://github.com/yourusername/project-alpha"
-  // },
-  // {
-  //   title: "Digital Tools Hub",
-  //   description: "Collection of productivity tools for remote teams",
-  //   image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-  //   url: "#",
-  //   revenue: "$35,000/mo",
-  //   industry: "Productivity",
-  //   techStack: ["Vue.js", "Firebase", "Flutter"],
-  //   type: "mobile" as const,
-  //   failed: true,
-  //   github: "https://github.com/yourusername/digital-tools-hub"
-  // },
   {
     title: "PortfolioGPT",
     description: "Generate smart portfolios in seconds with AI",
@@ -39,7 +14,6 @@ const projects = [
     techStack: ["Python", "Next.js", "MongoDB", "Vercel", "Heroku", "OpenAI API"],
     type: "web" as const,
     acquired: true,
-    
   },
   {
     title: "TipsterGPT",
@@ -96,7 +70,7 @@ const socialLinks = [
   { icon: <Send className="h-6 w-6" />, url: "https://t.me/LaliotisJR", label: "Telegram" },
 ];
 
-const favoriteTools = [
+const paidTools = [
   {
     name: "Cursor",
     url: "https://www.cursor.com/",
@@ -108,14 +82,22 @@ const favoriteTools = [
     icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
   },
   {
-    name: "Vercel",
-    url: "https://vercel.com",
-    icon: "https://pipedream.com/s.v0/app_XaLh2x/logo/orig",
-  },
-  {
     name: "Claude",
     url: "https://claude.ai/",
     icon: "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png",
+  },
+  {
+    name: "ChatGPT",
+    url: "https://openai.com",
+    icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
+  },
+];
+
+const freeTools = [
+  {
+    name: "Vercel",
+    url: "https://vercel.com",
+    icon: "https://pipedream.com/s.v0/app_XaLh2x/logo/orig",
   },
   {
     name: "code2prompt",
@@ -123,16 +105,34 @@ const favoriteTools = [
     icon: "https://github.com/mufeedvh/code2prompt/raw/main/.assets/code2prompt-screenshot.png",
   },
   {
-    name: "ChatGPT",
-    url: "https://openai.com",
-    icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
-  },
-  {
     name: "Shipfast",
     url: "https://shipfa.st/?via=sleepwow",
     icon: "https://shipfa.st/logo_transparent.png",
   },
 ];
+
+const ToolGrid = ({ tools }: { tools: typeof paidTools }) => (
+  <div className="flex flex-wrap gap-6 justify-center">
+    {tools.map((tool) => (
+      <a
+        key={tool.name}
+        href={tool.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
+      >
+        <img
+          src={tool.icon}
+          alt={tool.name}
+          className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all duration-300"
+        />
+        <span className="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
+          {tool.name}
+        </span>
+      </a>
+    ))}
+  </div>
+);
 
 const Index = () => {
   return (
@@ -183,26 +183,22 @@ const Index = () => {
           <h2 className="mb-8 text-center gradient-text text-3xl font-bold tracking-tight">
             Favorite Tools
           </h2>
-          <div className="flex flex-wrap gap-6 justify-center">
-            {favoriteTools.map((tool) => (
-              <a
-                key={tool.name}
-                href={tool.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-colors"
-              >
-                <img
-                  src={tool.icon}
-                  alt={tool.name}
-                  className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all"
-                />
-                <span className="text-gray-400 group-hover:text-gray-200 transition-colors">
-                  {tool.name}
-                </span>
-              </a>
-            ))}
-          </div>
+          <Tabs defaultValue="paid" className="w-full">
+            <TabsList className="grid w-[400px] max-w-[90vw] grid-cols-2 mx-auto mb-8">
+              <TabsTrigger value="paid" className="text-lg">
+                Paid
+              </TabsTrigger>
+              <TabsTrigger value="free" className="text-lg">
+                Free
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="paid" className="animate-fade-in mt-0">
+              <ToolGrid tools={paidTools} />
+            </TabsContent>
+            <TabsContent value="free" className="animate-fade-in mt-0">
+              <ToolGrid tools={freeTools} />
+            </TabsContent>
+          </Tabs>
         </div>
 
         <div className="animate-fade-up animation-delay-300">
