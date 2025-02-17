@@ -1,4 +1,3 @@
-
 import { ProjectCard } from "@/components/ProjectCard";
 import { RevenueStats } from "@/components/RevenueStats";
 import { Linkedin, Twitter, Github, Send, MapPin } from "lucide-react";
@@ -76,25 +75,21 @@ const paidTools = [
     name: "Cursor",
     url: "https://www.cursor.com/",
     icon: "https://www.cursor.com/apple-touch-icon.png",
-    price: "$20/mo"
   },
   {
     name: "Lovable",
     url: "https://lovable.dev/",
     icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
-    price: "$50/mo"
   },
   {
     name: "Claude",
     url: "https://claude.ai/",
     icon: "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png",
-    price: "$20/mo"
   },
   {
     name: "ChatGPT",
     url: "https://openai.com",
     icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
-    price: "$20/mo"
   },
 ];
 
@@ -116,7 +111,7 @@ const freeTools = [
   },
 ];
 
-const ToolGrid = ({ tools, showPrice }: { tools: any[] }) => (
+const ToolGrid = ({ tools }: { tools: typeof paidTools }) => (
   <div className="flex flex-wrap gap-6 justify-center">
     {tools.map((tool) => (
       <a
@@ -131,16 +126,9 @@ const ToolGrid = ({ tools, showPrice }: { tools: any[] }) => (
           alt={tool.name}
           className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all duration-300"
         />
-        <div className="flex flex-col">
-          <span className="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
-            {tool.name}
-          </span>
-          {showPrice && 'price' in tool && (
-            <span className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors duration-300">
-              {tool.price}
-            </span>
-          )}
-        </div>
+        <span className="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
+          {tool.name}
+        </span>
       </a>
     ))}
   </div>
@@ -196,22 +184,16 @@ const Index = () => {
             Favorite Tools
           </h2>
           <Tabs defaultValue="paid" className="w-full">
-            <TabsList className="grid w-[400px] max-w-[90vw] grid-cols-2 mx-auto mb-8 bg-[#1A1F2C]/80 border border-[#8B5CF6]/10 backdrop-blur-sm p-1 rounded-xl">
-              <TabsTrigger 
-                value="paid" 
-                className="text-lg px-8 py-2 rounded-lg data-[state=active]:bg-[#8B5CF6]/20 data-[state=active]:text-white transition-all duration-300"
-              >
+            <TabsList className="grid w-[400px] max-w-[90vw] grid-cols-2 mx-auto mb-8">
+              <TabsTrigger value="paid" className="text-lg">
                 Paid
               </TabsTrigger>
-              <TabsTrigger 
-                value="free" 
-                className="text-lg px-8 py-2 rounded-lg data-[state=active]:bg-[#8B5CF6]/20 data-[state=active]:text-white transition-all duration-300"
-              >
+              <TabsTrigger value="free" className="text-lg">
                 Free
               </TabsTrigger>
             </TabsList>
             <TabsContent value="paid" className="animate-fade-in mt-0">
-              <ToolGrid tools={paidTools} showPrice={true} />
+              <ToolGrid tools={paidTools} />
             </TabsContent>
             <TabsContent value="free" className="animate-fade-in mt-0">
               <ToolGrid tools={freeTools} />
