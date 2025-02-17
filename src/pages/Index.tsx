@@ -75,21 +75,25 @@ const paidTools = [
     name: "Cursor",
     url: "https://www.cursor.com/",
     icon: "https://www.cursor.com/apple-touch-icon.png",
+    price: "$20/mo"
   },
   {
     name: "Lovable",
     url: "https://lovable.dev/",
     icon: "https://sacra.cdn.prismic.io/sacra/Z4V6ApbqstJ99Zom_lovablelogo.svg",
+    price: "$50/mo"
   },
   {
     name: "Claude",
     url: "https://claude.ai/",
     icon: "https://zorgle.co.uk/wp-content/uploads/2024/11/Claude-ai-logo.png",
+    price: "$20/mo"
   },
   {
     name: "ChatGPT",
     url: "https://openai.com",
     icon: "https://metricool.com/wp-content/uploads/ChatGPT_logo.svg.png",
+    price: "$20/mo"
   },
 ];
 
@@ -111,7 +115,7 @@ const freeTools = [
   },
 ];
 
-const ToolGrid = ({ tools }: { tools: typeof paidTools }) => (
+const ToolGrid = ({ tools, showPrice }: { tools: typeof paidTools; showPrice?: boolean }) => (
   <div className="flex flex-wrap gap-6 justify-center">
     {tools.map((tool) => (
       <a
@@ -119,16 +123,23 @@ const ToolGrid = ({ tools }: { tools: typeof paidTools }) => (
         href={tool.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 hover:scale-105"
+        className="group flex flex-col items-center p-4 rounded-xl bg-[#1A1F2C]/80 hover:bg-[#221F26]/80 border border-[#8B5CF6]/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-[#8B5CF6]/30"
       >
-        <img
-          src={tool.icon}
-          alt={tool.name}
-          className="w-6 h-6 object-contain filter grayscale group-hover:filter-none transition-all duration-300"
-        />
-        <span className="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">
-          {tool.name}
-        </span>
+        <div className="flex items-center gap-3">
+          <img
+            src={tool.icon}
+            alt={tool.name}
+            className="w-8 h-8 object-contain filter grayscale group-hover:filter-none transition-all duration-300"
+          />
+          <span className="text-gray-300 group-hover:text-white transition-colors duration-300 font-medium">
+            {tool.name}
+          </span>
+        </div>
+        {showPrice && 'price' in tool && (
+          <span className="mt-2 text-xs font-light text-[#C8C8C9] group-hover:text-[#F1F1F1] transition-colors duration-300">
+            {tool.price}
+          </span>
+        )}
       </a>
     ))}
   </div>
@@ -193,7 +204,7 @@ const Index = () => {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="paid" className="animate-fade-in mt-0">
-              <ToolGrid tools={paidTools} />
+              <ToolGrid tools={paidTools} showPrice={true} />
             </TabsContent>
             <TabsContent value="free" className="animate-fade-in mt-0">
               <ToolGrid tools={freeTools} />
