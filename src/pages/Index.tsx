@@ -87,6 +87,17 @@ const projects = [
     acquired: false,
     github: "https://github.com/llaliotis/candidate-matchmaker"
   },
+  {
+    title: "Yakaroo",
+    description: "Anonymously connect with everyone at your college",
+    image: "/yakaroo.png",
+    url: "https://yakaroo.vercel.app/",
+    revenue: "$0/mo",
+    industry: "Social Media",
+    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "web" as const,
+    acquired: false,
+  },
 ];
 
 const socialLinks = [
