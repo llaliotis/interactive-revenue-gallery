@@ -24,7 +24,7 @@ export const RevenueStats = () => {
     <div className="grid gap-6 md:grid-cols-3">
       <StatCard
         title="Startups"
-        value="5"
+        value="7"
         icon={<Rocket className="h-6 w-6" />}
       />
       <StatCard

@@ -75,6 +75,29 @@ const projects = [
     acquired: false,
     github: "https://github.com/llaliotis/interactive-revenue-gallery"
   },
+  
+  {
+    title: "Weezel",
+    description: "Anonymously connect with everyone at your college",
+    image: "/weezel.png",
+    url: "https://www.weezel.xyz/",
+    revenue: "$0/mo",
+    industry: "Social Media",
+    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "web" as const,
+    acquired: false,
+  },
+  {
+    title: "Plumply",
+    description: "Uncover competitor moves before they happen",
+    image: "/plumply.png",
+    url: "https://www.plumply.xyz/",
+    revenue: "$0/mo",
+    industry: "AI",
+    techStack: ["Vite", "Typescript", "Python", "React", "shadcn-ui", "Tailwind CSS", "Supabase"],
+    type: "web" as const,
+    acquired: false
+  },
   {
     title: "Candidate Matchmaker",
     description: "Upload a resume and job description to see how well they match",
@@ -86,17 +109,6 @@ const projects = [
     type: "web" as const,
     acquired: false,
     github: "https://github.com/llaliotis/candidate-matchmaker"
-  },
-  {
-    title: "Yakaroo",
-    description: "Anonymously connect with everyone at your college",
-    image: "/yakaroo.png",
-    url: "https://yakaroo.vercel.app/",
-    revenue: "$0/mo",
-    industry: "Social Media",
-    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
-    type: "web" as const,
-    acquired: false,
   },
 ];
 
