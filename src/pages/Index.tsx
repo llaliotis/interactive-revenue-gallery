@@ -83,8 +83,8 @@ const projects = [
     url: "https://www.weezel.xyz/",
     revenue: "$0/mo",
     industry: "Social Media",
-    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
-    type: "web" as const,
+    techStack: ["Capacitor by Ionic", "Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "mobile" as const,
     acquired: false,
   },
   {
@@ -109,6 +109,28 @@ const projects = [
     type: "web" as const,
     acquired: false,
     github: "https://github.com/llaliotis/candidate-matchmaker"
+  },
+  {
+    title: "Leasing Scout",
+    description: "Easily compare leasing deals from top providers, all in one place",
+    image: "/lease.png",
+    url: "https://lease-scout-hub.vercel.app/",
+    revenue: "$0/mo",
+    industry: "Aggregator",
+    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "web" as const,
+    acquired: false
+  },
+  {
+    title: "Investing Playbook",
+    description: "Your simple guide to smart investing",
+    image: "/investing.png",
+    url: "https://www.investingplaybook.org/",
+    revenue: "$0/mo",
+    industry: "Education",
+    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "web" as const,
+    acquired: false
   },
 ];
 
