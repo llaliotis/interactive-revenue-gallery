@@ -69,10 +69,10 @@ const projects = [
     title: "Carlytics",
     description: "The Smartest Way to Analyze Used Cars in Greece",
     image: "/carlytics.png",
-    url: "https://www.plumply.xyz/",
+    url: "https://www.carlytics.gr/",
     revenue: "$0/mo",
-    industry: "AI",
-    techStack: ["Vite", "Typescript", "Python", "React", "shadcn-ui", "Tailwind CSS", "Supabase"],
+    industry: "Automotive",
+    techStack: ["Python", "React", "Tailwind CSS", "Supabase"],
     type: "web" as const,
     acquired: false
   },
