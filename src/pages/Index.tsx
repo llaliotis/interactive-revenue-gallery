@@ -52,6 +52,31 @@ const projects = [
     type: "web" as const,
     acquired: true
   },
+
+  {
+    title: "Weezel",
+    description: "Anonymously connect with everyone at your college",
+    image: "/weezel.png",
+    url: "https://www.weezel.xyz/",
+    revenue: "$0/mo",
+    industry: "Social Media",
+    techStack: ["Capacitor by Ionic", "Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "mobile" as const,
+    acquired: true,
+  },
+
+  {
+    title: "Carlytics",
+    description: "The Smartest Way to Analyze Used Cars in Greece",
+    image: "/carlytics.png",
+    url: "https://www.plumply.xyz/",
+    revenue: "$0/mo",
+    industry: "AI",
+    techStack: ["Vite", "Typescript", "Python", "React", "shadcn-ui", "Tailwind CSS", "Supabase"],
+    type: "web" as const,
+    acquired: false
+  },
+
   {
     title: "Swollet",
     description: "Financial Education. Gamified",
@@ -61,6 +86,18 @@ const projects = [
     industry: "Education",
     techStack: ["Flutter", "Firebase", "OpenAI API", "Polygon Blockchain"],
     type: "mobile" as const,
+    acquired: false
+  },
+
+  {
+    title: "Investing Playbook",
+    description: "Your simple guide to smart investing",
+    image: "/investing.png",
+    url: "https://www.investingplaybook.org/",
+    revenue: "$0/mo",
+    industry: "Education",
+    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
+    type: "web" as const,
     acquired: false
   },
   {
@@ -76,28 +113,8 @@ const projects = [
     github: "https://github.com/llaliotis/interactive-revenue-gallery"
   },
   
-  {
-    title: "Weezel",
-    description: "Anonymously connect with everyone at your college",
-    image: "/weezel.png",
-    url: "https://www.weezel.xyz/",
-    revenue: "$0/mo",
-    industry: "Social Media",
-    techStack: ["Capacitor by Ionic", "Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
-    type: "mobile" as const,
-    acquired: false,
-  },
-  {
-    title: "Plumply",
-    description: "Uncover competitor moves before they happen",
-    image: "/plumply.png",
-    url: "https://www.plumply.xyz/",
-    revenue: "$0/mo",
-    industry: "AI",
-    techStack: ["Vite", "Typescript", "Python", "React", "shadcn-ui", "Tailwind CSS", "Supabase"],
-    type: "web" as const,
-    acquired: false
-  },
+  
+
   {
     title: "Candidate Matchmaker",
     description: "Upload a resume and job description to see how well they match",
@@ -121,17 +138,7 @@ const projects = [
     type: "web" as const,
     acquired: false
   },
-  {
-    title: "Investing Playbook",
-    description: "Your simple guide to smart investing",
-    image: "/investing.png",
-    url: "https://www.investingplaybook.org/",
-    revenue: "$0/mo",
-    industry: "Education",
-    techStack: ["Vite", "Typescript", "React", "shadcn-ui", "Tailwind CSS"],
-    type: "web" as const,
-    acquired: false
-  },
+
 ];
 
 const socialLinks = [
